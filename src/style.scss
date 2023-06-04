@@ -1,3 +1,88 @@
+@import './styles/variable';
+@import './styles/mixin';
+@import './styles/function';
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer base {
+  html,
+  body {
+    font-size: $text-base;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: $color-black-0;
+    background-color: $color-black-100;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Common */
+  @include media('', md, lg) using ($type) {
+    @for $i from 1 through 3 {
+      #{_select_type('.text-display-#{$i}', $type)} {
+        font-weight: $text-regular;
+        line-height: $line-height-2;
+        font-style: normal;
+        &.bold,
+        .bold {
+          font-weight: $text-black;
+        }
+      }
+    }
+    @for $i from 1 through 6 {
+      #{_select_type('.text-heading-#{$i}', $type)} {
+        font-weight: $text-regular;
+        line-height: $line-height-2;
+        font-style: normal;
+        &.bold,
+        .bold {
+          font-weight: $text-black;
+        }
+      }
+    }
+    @each $type in (body, small, tiny) {
+      #{_select_type('.text-#{$type}', $type)} {
+        font-weight: $text-regular;
+        line-height: $line-height-1;
+        font-style: normal;
+        &.bold,
+        .bold {
+          font-weight: $text-bold;
+        }
+      }
+    }
+    $mapText: (
+      display-1: $text-display01,
+      display-2: $text-display02,
+      display-3: $text-display03,
+      heading-1: $text-heading01,
+      heading-2: $text-heading02,
+      heading-3: $text-heading03,
+      heading-4: $text-heading04,
+      heading-5: $text-heading05,
+      heading-6: $text-heading06,
+      body: $text-body,
+      small: $text-small,
+      tiny: $text-tiny,
+    );
+    @each $name, $value in $mapText {
+      #{_select_type('.text-#{$name}', $type)} {
+        font-size: $value;
+      }
+    }
+  }
+
+  .wrap {
+    max-width: 552px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 768px) {
+      max-width: 640px;
+    }
+    @media (min-width: 1024px) {
+      max-width: 1296px;
+    }
+  }
+}

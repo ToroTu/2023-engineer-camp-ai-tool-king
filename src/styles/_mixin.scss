@@ -1,0 +1,18 @@
+@use 'sass:map';
+
+@mixin media($types...) {
+  $map: (
+    md: '(min-width: 768px)',
+    lg: '(min-width: 1024px)',
+  );
+  @each $type in $types {
+    @if $type == '' {
+      @content ('');
+    } @else {
+      $t: map.get($map, $type);
+      @media #{$t} {
+        @content ($type);
+      }
+    }
+  }
+}

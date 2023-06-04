@@ -1,0 +1,13 @@
+@use 'sass:string';
+
+@function _select_type($selector, $type) {
+  @if ($type == '') {
+    @return $selector;
+  } @else {
+    $prefix: '.';
+    @if (str-index($selector, $prefix) == 1) {
+      $selector: str-slice($selector, 2);
+    }
+    @return str-insert($selector, '.#{$type}\\:', 1);
+  }
+}
