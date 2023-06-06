@@ -42,8 +42,8 @@
         }
       }
     }
-    @each $type in (body, small, tiny) {
-      #{_select_type('.text-#{$type}', $type)} {
+    @each $size in body, small, tiny {
+      #{_select_type('.text-#{$size}', $type)} {
         font-weight: $text-regular;
         line-height: $line-height-1;
         font-style: normal;
