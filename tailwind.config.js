@@ -14,6 +14,10 @@ export default {
         surface: '#f2efe7',
         body: '#1e1e1e',
       },
+      zIndex: {
+        header: 100,
+        sidebar: 90,
+      },
     },
   },
   plugins: [],
