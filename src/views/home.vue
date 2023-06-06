@@ -6,6 +6,7 @@ import BannerAnimate from '../components/common/banner_animate.vue';
 import ServiceItem from '../components/home/service_item.vue';
 import PartnerAnimate from '../components/home/partner_animate.vue';
 import PartnerSwiper from '../components/home/partner_swiper.vue';
+import AiToolWrap from '../components/common/ai_tool_wrap.vue';
 
 </script>
 
@@ -63,6 +64,8 @@ import PartnerSwiper from '../components/home/partner_swiper.vue';
     <PartnerAnimate></PartnerAnimate>
     <PartnerSwiper></PartnerSwiper>
   </div>
+  <!-- 工具王 -->
+  <AiToolWrap class="jk-mt-[7.5rem]"></AiToolWrap>
   <!-- 開始使用 -->
   <div class="wrap jk-my-10 jk-py-[7.5rem] jk-flex jk-flex-col jk-items-center jk-text-center jk-text-black-0">
     <h2 class="text-heading-3 bold jk-flex jk-flex-wrap jk-justify-center jk-mb-8 lg:text-heading-1 lg:bold lg:jk-mb-10">
