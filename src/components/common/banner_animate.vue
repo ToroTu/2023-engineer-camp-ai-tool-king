@@ -1,5 +1,5 @@
 <template>
-  <div class="banner-animate jk-flex jk-overflow-hidden banner-animate">
+  <div class="banner-animate jk-flex jk-overflow-hidden">
     <span v-for="i in 3" :key="i">
       <svg width="117" height="117" viewBox="0 0 117 117" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
