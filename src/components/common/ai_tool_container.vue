@@ -24,7 +24,10 @@ const paginationConfig = computed(() => ({
  * 取得資料搜尋結果
  */
 const getSearch = async (params) => {
-  params && (searchParams = params);
+  if (params) {
+    searchParams = params;
+    tempPage.value = 1;
+  }
   const data = await getDataList({
     ...searchParams,
     page: tempPage.value || 1,
